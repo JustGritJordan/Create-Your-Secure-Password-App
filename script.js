@@ -63,67 +63,6 @@ function generatePassword() {
   //Step 6:
   // WHEN all prompts are answered
   // THEN a password is generated that matches the selected criteria
-
-  var lowerPrompt = [
-    "a",
-    "b,",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
-  var upperPrompt = [
-    "A",
-    "B,",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-  ];
-  var numberPrompt = [1232456789];
-  var specialPrompt = ["!@#$%^&*"];
-
-  var passwordSelections = [];
 }
 
 //Step 7:
@@ -139,8 +78,64 @@ function writePassword() {
 
 var passwordLength;
 
-// created empty results to store usuer arrays
-// const results[
-// ]
+var lowerPrompt = [
+  "a",
+  "b,",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var upperPrompt = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+var numberPrompt = ["0", "1", "2", "3", "2", "4", "5", "6", "7", "8", "9"];
+var specialPrompt = ["!", "@", "#", "$", "%", "^", "&", "*"];
 
-// return false
+var passwordSelections = [];
+// created empty results to store usuer arrays
