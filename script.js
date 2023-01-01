@@ -1,74 +1,131 @@
-// GIVEN I need a new, secure password
-// Assignment code here
+// // GIVEN I need a new, secure password
+// // Assignment code here
 
-//Step 1:
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
+// //Step 1:
+// // WHEN I click the button to generate a password
+// // THEN I am presented with a series of prompts for password criteria
 
-// Get references to the #generate element
-// Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
-//Step 2:
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-
 function generatePassword() {
-  //Step 3:
-  // WHEN prompted for the length of the password
-  // THEN I choose a length of at least 8 characters and no more than 128 characters
   var passwordLength = prompt(
     "Enter a password length no less than 8 characters and no more than 128 characters"
   );
-  if (passwordLength > 8 || passwordLength < 128) {
+  if (passwordLength > 8 && passwordLength < 128) {
     alert("Recevied");
   } else {
-    alert("Will not be included");
+    alert("Invalid Input");
   }
-  //Step 4:
-  // WHEN asked for character types to include in the password
-  // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-
+  var generatePasswordArray = [];
   var lowerPrompt = prompt("Do you want a lowercase character, yes or no?");
+
   if (lowerPrompt === "yes") {
+    var lowerLetterChar = [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "t",
+      "u",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z",
+    ];
+    generatePasswordArray = generatePasswordArray.concat(lowerLetterChar);
+    // var randomLowerLetter = Math.floor(Math.random() * lowerLetterChar.length);
+    // console.log(lowerLetterChar[randomLowerLetter]);
+
+    // for (var i = 0; i < lowerLetterChar.length; i = i + 1) {
+    //   // console.log(lowerLetterChar[i]);
+    // }
+    //
     alert("Recieved");
+    // Place for randamization of lower letter charters array
   } else {
     alert("Will not be included");
   }
 
   var upperPrompt = prompt("Do you want a uppercase character, yes or no?");
+  var upperCaseLetters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
   if (upperPrompt === "yes") {
+    generatePasswordArray = generatePasswordArray.concat(upperCaseLetters);
     alert("Recieved");
   } else {
     alert("Will not be included");
   }
+
   var numberPrompt = prompt("Do you want a number character, yes or no?");
+  var numbers = ["0", "1", "2", "3", "2", "4", "5", "6", "7", "8", "9"];
   if (numberPrompt === "yes") {
+    generatePasswordArray = generatePasswordArray.concat(numbers);
     alert("Recieved");
   } else {
     alert("Will not be included");
   }
+
   var specialPrompt = prompt("Do you want a special character, yes or no?");
+  var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*"];
   if (specialPrompt === "yes") {
+    generatePasswordArray = generatePasswordArray.concat(specialChar);
     alert("Recieved");
   } else {
     alert("Will not be included");
   }
-
-  //Step 5:
-  // WHEN I answer each prompt
-  // THEN my input should be validated and at least one character type should be selected
-
-  //Step 6:
-  // WHEN all prompts are answered
-  // THEN a password is generated that matches the selected criteria
+  var randompassword = "";
+  for (var i = 0; i < passwordLength; i++) {
+    var randomLowerLetter = Math.floor(
+      Math.random() * generatePasswordArray.length
+    );
+    randompassword += generatePasswordArray[randomLowerLetter];
+  }
+  return randompassword;
 }
 
-//Step 7:
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -76,66 +133,5 @@ function writePassword() {
   passwordText.value = password;
 }
 
-var passwordLength;
-
-var lowerPrompt = [
-  "a",
-  "b,",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
-var upperPrompt = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
-var numberPrompt = ["0", "1", "2", "3", "2", "4", "5", "6", "7", "8", "9"];
-var specialPrompt = ["!", "@", "#", "$", "%", "^", "&", "*"];
-
 var passwordSelections = [];
-// created empty results to store usuer arrays
+// // created empty results to store usuer arrays
