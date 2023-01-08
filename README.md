@@ -16,10 +16,6 @@ https://justgritjordan.github.io/Create-Your-Secure-Password-App/
 
 https://github.com/JustGritJordan/Create-Your-Secure-Password-App
 
-![alt text](screenshots/filename.png "Description goes here")
-
 ## Screenshots
 
-![Code Screen Shot line :1 -48](<../Screenshot%20(19).png>)!
-[Code Screen Shot line : 48 - 96](<../Screenshot%20(20).png>)
-![Code Screen Shot line: 96 - 141](<../Screenshot%20(21).png>)
+![password-generator](./assets/screenshots/password-generator.png)
